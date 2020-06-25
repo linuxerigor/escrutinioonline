@@ -1,0 +1,13 @@
+<h1 class="cover-heading">Escrutinio Online</h1>
+    <p class="lead">Votação online, secreta e auditável</p>
+    <p class="lead">
+      <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Criar um escrutinio</a>
+    </p>
+
+
+    <h1 class="cover-heading mt-5">Ou</h1>
+    <p class="lead mt-5">
+      <small class="text-small">Digite o número do escrutinio</small>
+      <input type="text" [(ngModel)]="escrutinioid"  class="form-control" placeholder="ID: ......." (ngModelChange)="escrutinioenter($event)">
+      <!-- <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Iniciar votação</a> -->
+    </p>

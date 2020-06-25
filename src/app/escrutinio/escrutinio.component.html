@@ -1,0 +1,75 @@
+    <h2 class="mb-0">Escrutinio ID:</h2>
+    <h4 class="lead overflow-hidden text-muted mt-0">{{escrutinioid}}</h4>
+
+    <!-- ############# primeira etapa ################### -->
+    <div *ngIf="!minhachave">
+      <h1 class="cover-heading mt-5">Primeira etapa</h1>
+      <p class="h6"><small>Para votar, você precisa criar uma identificação na Blockchain</small></p>
+      <p class="lead">
+        <button (click)="criarid()" class="btn btn-lg btn-secondary">Gerar minha identificação</button>
+      </p>
+    </div>
+
+     <!-- ############# segunda etapa ################### -->
+     <div *ngIf="minhachave && !chavesalva">
+      <h1 class="mt-5">Segunda etapa</h1>
+      <p class="h6"><small>Guardar sua chave em segurança e sigilo. Somente com ela é possível auditar o seu voto.</small></p>
+      <p class="h6 mt-3"><small>Minha chave de identificação</small></p>
+      <!-- <span class="badge badge-info badge-pill p-2" (click)="sharebyclipboard(minhachave)"><span class="overflow-hidden">{{ minhachave }}</span></span> -->
+      <input type="text" class="form-control" (click)="sharebyclipboard($event)" value="{{ minhachave }}">
+      <!-- <p class="h6"><small>{{ minhachave }}</small></p> -->
+      <div class="mt-5">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="confirm" id="defaultCheck1">
+          <small class="form-check-label" for="defaultCheck1">
+            Confirmo que copiei a chave e guardei em lugar seguro
+          </small>
+        </div>
+        <button (click)="setchavesalva()" class="btn btn-lg btn-secondary" [disabled]="!confirm">Prosseguir com a votação</button>
+      </div>
+    </div>
+
+
+    <!-- ############# terceira etapa ################### -->
+    <div *ngIf="minhachave && chavesalva">
+      <h1 class="cover-heading mt-5">Terceira etapa</h1>
+      <p class="h6"><small>Vote no seu candidato</small></p>
+
+      <div class="card">
+        <div class="card-header text-dark">
+          Candidatos
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush" *ngIf="propostos">
+            <li *ngFor="let item of propostos"  class="list-group-item text-dark text-left">
+              <b>#{{item.id}}</b>  {{item.nome}}
+              <button type="button" (click)="confirmvoto(item)" [disabled]="submitted" class="btn btn-outline-primary float-right">&nbsp;</button>
+            </li>
+          </ul>
+
+          <div *ngIf="submitted" class="alert alert-light" role="alert">
+            Este processo pode demorar. Aguarde...
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+          <div *ngIf="vototerminado" class="alert alert-success" role="alert">
+            Voto concluído com sucesso
+          </div>
+
+
+          <div *ngIf="!propostos || propostos.length == 0" class="alert alert-light" role="alert">
+            Carregando
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          Minha chave: {{ minhachave }}
+        </div>
+      </div>
+
+    </div>
+

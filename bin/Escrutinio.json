@@ -1,0 +1,2457 @@
+{
+    "contractName": "Escrutinio",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes32[]",
+                    "name": "propostoNome",
+                    "type": "bytes32[]"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "participantes",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "votado",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "chaveUnica",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "voto",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "i",
+                    "type": "uint256"
+                }
+            ],
+            "name": "proposalNameByPos",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "propostosName_",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "i",
+                    "type": "uint256"
+                }
+            ],
+            "name": "proposalVotesByPos",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "totalVotos_",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "propostos",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "nome",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "votoTotal",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "exists",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalParticipantes",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "totalPropostos",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "totalPropostos_",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "votacaoTerminada",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "votacaoterminada_",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "chaveUnica",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "proposto_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "voto",
+            "outputs": [],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.6.10+commit.00c0fcaf\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"propostoNome\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"participantes\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"votado\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"chaveUnica\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"voto\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"i\",\"type\":\"uint256\"}],\"name\":\"proposalNameByPos\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"propostosName_\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"i\",\"type\":\"uint256\"}],\"name\":\"proposalVotesByPos\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalVotos_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"propostos\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"nome\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"votoTotal\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalParticipantes\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalPropostos\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalPropostos_\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"votacaoTerminada\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"votacaoterminada_\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"chaveUnica\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"proposto_\",\"type\":\"uint256\"}],\"name\":\"voto\",\"outputs\":[],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Escrutinio online.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/igormarques/Documents/IGOR/Projetos/escrutinioonline/escrutinioonline.sol\":\"Escrutinio\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/igormarques/Documents/IGOR/Projetos/escrutinioonline/escrutinioonline.sol\":{\"keccak256\":\"0xa0bbde720f8cf394598f79bee25f6a7d784b6e6198fe877270c80cc98a435222\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://57d9d38483ff0ce75b3c5f11a2b4f69ca94623937080a67c8fa644a3c5960b97\",\"dweb:/ipfs/QmakrNdwwwTZ41UhsVtV7ip39ufRbdt8ywg8o4ZjeHXcug\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b506040516104cb3803806104cb8339818101604052602081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b90830190602082018581111561006857600080fd5b825186602082028301116401000000008211171561008557600080fd5b82525081516020918201928201910280838360005b838110156100b257818101518382015260200161009a565b50505050905001604052505050806001825103815181106100cf57fe5b602090810291909101015160009081555b6001825103811015610176576002604051806080016040528083815260200184848151811061010b57fe5b60209081029190910181015182526000828201819052600160409384018190528554808201875595825290829020845160049096020194855590830151848201559082015160028401556060909101516003909201805460ff191692151592909217909155016100e0565b5050610344806101876000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063a5ac6b191161005b578063a5ac6b1914610156578063ba8b1bf314610184578063d23879e4146101a1578063d8fe0d9c146101a957610088565b80632fffcf961461008d57806362dea121146100db578063766a79c0146100f55780639270103f1461013a575b600080fd5b6100b3600480360360208110156100a357600080fd5b50356001600160a01b03166101c6565b6040805193151584526001600160a01b03909216602084015282820152519081900360600190f35b6100e36101f3565b60408051918252519081900360200190f35b6101126004803603602081101561010b57600080fd5b50356101f9565b6040805194855260208501939093528383019190915215156060830152519081900360800190f35b610142610233565b604080519115158252519081900360200190f35b6101826004803603604081101561016c57600080fd5b506001600160a01b03813516906020013561024f565b005b6100e36004803603602081101561019a57600080fd5b50356102b8565b6100e36102e0565b6100e3600480360360208110156101bf57600080fd5b50356102e6565b6001602081905260009182526040909120805491015460ff82169161010090046001600160a01b03169083565b60005481565b6002818154811061020657fe5b60009182526020909120600490910201805460018201546002830154600390930154919350919060ff1684565b6000805460025410156102485750600061024c565b5060015b90565b6001600160a01b038216600090815260016020526040812090546002541061027657600080fd5b6002828154811061028357fe5b600091825260209091206003600490920201015460ff16156102a457600080fd5b805460ff16156102b357600080fd5b505050565b6000600282815481106102c757fe5b9060005260206000209060040201600201549050919050565b60025490565b6000600282815481106102f557fe5b906000526020600020906004020160010154905091905056fea2646970667358221220b28bb6e34ec23a393c2e5a998c3b9c174e9f2bc3734dbe57e037bc54a85737d464736f6c634300060a0033",
+    "deployedBytecode": "608060405234801561001057600080fd5b50600436106100885760003560e01c8063a5ac6b191161005b578063a5ac6b1914610156578063ba8b1bf314610184578063d23879e4146101a1578063d8fe0d9c146101a957610088565b80632fffcf961461008d57806362dea121146100db578063766a79c0146100f55780639270103f1461013a575b600080fd5b6100b3600480360360208110156100a357600080fd5b50356001600160a01b03166101c6565b6040805193151584526001600160a01b03909216602084015282820152519081900360600190f35b6100e36101f3565b60408051918252519081900360200190f35b6101126004803603602081101561010b57600080fd5b50356101f9565b6040805194855260208501939093528383019190915215156060830152519081900360800190f35b610142610233565b604080519115158252519081900360200190f35b6101826004803603604081101561016c57600080fd5b506001600160a01b03813516906020013561024f565b005b6100e36004803603602081101561019a57600080fd5b50356102b8565b6100e36102e0565b6100e3600480360360208110156101bf57600080fd5b50356102e6565b6001602081905260009182526040909120805491015460ff82169161010090046001600160a01b03169083565b60005481565b6002818154811061020657fe5b60009182526020909120600490910201805460018201546002830154600390930154919350919060ff1684565b6000805460025410156102485750600061024c565b5060015b90565b6001600160a01b038216600090815260016020526040812090546002541061027657600080fd5b6002828154811061028357fe5b600091825260209091206003600490920201015460ff16156102a457600080fd5b805460ff16156102b357600080fd5b505050565b6000600282815481106102c757fe5b9060005260206000209060040201600201549050919050565b60025490565b6000600282815481106102f557fe5b906000526020600020906004020160010154905091905056fea2646970667358221220b28bb6e34ec23a393c2e5a998c3b9c174e9f2bc3734dbe57e037bc54a85737d464736f6c634300060a0033",
+    "sourceMap": "103:1867:0:-:0;;;478:382;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;478:382:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;567:12;602:1;580:12;:19;:23;567:37;;;;;;;;;;;;;;;;;;559:46;538:67;;;616:238;659:1;637:12;:19;:23;633:1;:27;616:238;;;681:9;696:146;;;;;;;;727:1;696:146;;;;752:12;765:1;752:15;;;;;;;;;;;;;;;;;;;696:146;;826:1;696:146;;;;;;793:4;696:146;;;;;;;681:162;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;681:162:0;;;;;;;;;;;662:3;616:238;;;;478:382;103:1867;;;;;;",
+    "deployedSourceMap": "103:1867:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;384:53;;;;;;;;;;;;;;;;-1:-1:-1;384:53:0;-1:-1:-1;;;;;384:53:0;;:::i;:::-;;;;;;;;;-1:-1:-1;;;;;384:53:0;;;;;;;;;;;;;;;;;;;;344:33;;;:::i;:::-;;;;;;;;;;;;;;;;444:27;;;;;;;;;;;;;;;;-1:-1:-1;444:27:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1295:227;;;:::i;:::-;;;;;;;;;;;;;;;;;;866:422;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;866:422:0;;;;;;;;:::i;:::-;;1823:144;;;;;;;;;;;;;;;;-1:-1:-1;1823:144:0;;:::i;1528:136::-;;;:::i;1670:147::-;;;;;;;;;;;;;;;;-1:-1:-1;1670:147:0;;:::i;384:53::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;384:53:0;;;:::o;344:33::-;;;;:::o;444:27::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;444:27:0;;;;;:::o;1295:227::-;1356:22;1414:18;;1395:9;:16;:37;1392:122;;;-1:-1:-1;1462:5:0;1392:122;;;-1:-1:-1;1510:4:0;1392:122;1295:227;:::o;866:422::-;-1:-1:-1;;;;;966:25:0;;938;966;;;:13;:25;;;;;1029:18;;1010:9;:16;:37;1002:46;;;;;;1067:9;1077;1067:20;;;;;;;;;;;;;;;;:27;:20;;;;;:27;;;;1066:28;1058:37;;;;;;1114:11;;;;1113:12;1105:21;;;;;;866:422;;;:::o;1823:144::-;1892:16;1938:9;1948:1;1938:12;;;;;;;;;;;;;;;;;;:22;;;1924:36;;1823:144;;;:::o;1528:136::-;1641:9;:16;;1528:136::o;1670:147::-;1738:22;1793:9;1803:1;1793:12;;;;;;;;;;;;;;;;;;:17;;;1776:34;;1670:147;;;:::o",
+    "sourcePath": "/Users/igormarques/Documents/IGOR/Projetos/escrutinioonline/escrutinioonline.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.10+commit.00c0fcaf"
+    },
+    "ast": {
+        "absolutePath": "/Users/igormarques/Documents/IGOR/Projetos/escrutinioonline/escrutinioonline.sol",
+        "exportedSymbols": {
+            "Escrutinio": [
+                170
+            ]
+        },
+        "id": 171,
+        "license": "UNLICENSED",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    ">=",
+                    "0.6",
+                    ".10",
+                    "<",
+                    "0.7",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "0:32:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": {
+                    "id": 2,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "73:30:0",
+                    "text": "@title Escrutinio online."
+                },
+                "fullyImplemented": true,
+                "id": 170,
+                "linearizedBaseContracts": [
+                    170
+                ],
+                "name": "Escrutinio",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "canonicalName": "Escrutinio.Participante",
+                        "id": 9,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 4,
+                                "mutability": "mutable",
+                                "name": "votado",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 9,
+                                "src": "160:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                },
+                                "typeName": {
+                                    "id": 3,
+                                    "name": "bool",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "160:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 6,
+                                "mutability": "mutable",
+                                "name": "chaveUnica",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 9,
+                                "src": "181:18:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                },
+                                "typeName": {
+                                    "id": 5,
+                                    "name": "address",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "181:7:0",
+                                    "stateMutability": "nonpayable",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 8,
+                                "mutability": "mutable",
+                                "name": "voto",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 9,
+                                "src": "209:9:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 7,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "209:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "Participante",
+                        "nodeType": "StructDefinition",
+                        "scope": 170,
+                        "src": "130:95:0",
+                        "visibility": "public"
+                    },
+                    {
+                        "canonicalName": "Escrutinio.Proposto",
+                        "id": 18,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 11,
+                                "mutability": "mutable",
+                                "name": "id",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 18,
+                                "src": "257:7:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 10,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "257:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 13,
+                                "mutability": "mutable",
+                                "name": "nome",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 18,
+                                "src": "274:12:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_bytes32",
+                                    "typeString": "bytes32"
+                                },
+                                "typeName": {
+                                    "id": 12,
+                                    "name": "bytes32",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "274:7:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes32",
+                                        "typeString": "bytes32"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 15,
+                                "mutability": "mutable",
+                                "name": "votoTotal",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 18,
+                                "src": "296:14:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 14,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "296:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 17,
+                                "mutability": "mutable",
+                                "name": "exists",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 18,
+                                "src": "320:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                },
+                                "typeName": {
+                                    "id": 16,
+                                    "name": "bool",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "320:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "Proposto",
+                        "nodeType": "StructDefinition",
+                        "scope": 170,
+                        "src": "231:107:0",
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "62dea121",
+                        "id": 20,
+                        "mutability": "mutable",
+                        "name": "totalParticipantes",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 170,
+                        "src": "344:33:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                        },
+                        "typeName": {
+                            "id": 19,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "344:7:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                            }
+                        },
+                        "value": null,
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "2fffcf96",
+                        "id": 24,
+                        "mutability": "mutable",
+                        "name": "participantes",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 170,
+                        "src": "384:53:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Participante_$9_storage_$",
+                            "typeString": "mapping(address => struct Escrutinio.Participante)"
+                        },
+                        "typeName": {
+                            "id": 23,
+                            "keyType": {
+                                "id": 21,
+                                "name": "address",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "392:7:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                }
+                            },
+                            "nodeType": "Mapping",
+                            "src": "384:32:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Participante_$9_storage_$",
+                                "typeString": "mapping(address => struct Escrutinio.Participante)"
+                            },
+                            "valueType": {
+                                "contractScope": null,
+                                "id": 22,
+                                "name": "Participante",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 9,
+                                "src": "403:12:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Participante_$9_storage_ptr",
+                                    "typeString": "struct Escrutinio.Participante"
+                                }
+                            }
+                        },
+                        "value": null,
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "766a79c0",
+                        "id": 27,
+                        "mutability": "mutable",
+                        "name": "propostos",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 170,
+                        "src": "444:27:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                            "typeString": "struct Escrutinio.Proposto[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "contractScope": null,
+                                "id": 25,
+                                "name": "Proposto",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 18,
+                                "src": "444:8:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Proposto_$18_storage_ptr",
+                                    "typeString": "struct Escrutinio.Proposto"
+                                }
+                            },
+                            "id": 26,
+                            "length": null,
+                            "nodeType": "ArrayTypeName",
+                            "src": "444:10:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage_ptr",
+                                "typeString": "struct Escrutinio.Proposto[]"
+                            }
+                        },
+                        "value": null,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 73,
+                            "nodeType": "Block",
+                            "src": "528:332:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 43,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 33,
+                                            "name": "totalParticipantes",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 20,
+                                            "src": "538:18:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "arguments": [
+                                                {
+                                                    "argumentTypes": null,
+                                                    "baseExpression": {
+                                                        "argumentTypes": null,
+                                                        "id": 36,
+                                                        "name": "propostoNome",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 30,
+                                                        "src": "567:12:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                                                            "typeString": "bytes32[] memory"
+                                                        }
+                                                    },
+                                                    "id": 41,
+                                                    "indexExpression": {
+                                                        "argumentTypes": null,
+                                                        "commonType": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        },
+                                                        "id": 40,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "leftExpression": {
+                                                            "argumentTypes": null,
+                                                            "expression": {
+                                                                "argumentTypes": null,
+                                                                "id": 37,
+                                                                "name": "propostoNome",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 30,
+                                                                "src": "580:12:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                                                                    "typeString": "bytes32[] memory"
+                                                                }
+                                                            },
+                                                            "id": 38,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "memberName": "length",
+                                                            "nodeType": "MemberAccess",
+                                                            "referencedDeclaration": null,
+                                                            "src": "580:19:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "nodeType": "BinaryOperation",
+                                                        "operator": "-",
+                                                        "rightExpression": {
+                                                            "argumentTypes": null,
+                                                            "hexValue": "31",
+                                                            "id": 39,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "number",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "602:1:0",
+                                                            "subdenomination": null,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_rational_1_by_1",
+                                                                "typeString": "int_const 1"
+                                                            },
+                                                            "value": "1"
+                                                        },
+                                                        "src": "580:23:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "nodeType": "IndexAccess",
+                                                    "src": "567:37:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bytes32",
+                                                        "typeString": "bytes32"
+                                                    }
+                                                }
+                                            ],
+                                            "expression": {
+                                                "argumentTypes": [
+                                                    {
+                                                        "typeIdentifier": "t_bytes32",
+                                                        "typeString": "bytes32"
+                                                    }
+                                                ],
+                                                "id": 35,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "lValueRequested": false,
+                                                "nodeType": "ElementaryTypeNameExpression",
+                                                "src": "559:7:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_uint256_$",
+                                                    "typeString": "type(uint256)"
+                                                },
+                                                "typeName": {
+                                                    "id": 34,
+                                                    "name": "uint256",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "559:7:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": null,
+                                                        "typeString": null
+                                                    }
+                                                }
+                                            },
+                                            "id": 42,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "kind": "typeConversion",
+                                            "lValueRequested": false,
+                                            "names": [],
+                                            "nodeType": "FunctionCall",
+                                            "src": "559:46:0",
+                                            "tryCall": false,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "538:67:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 44,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "538:67:0"
+                                },
+                                {
+                                    "body": {
+                                        "id": 71,
+                                        "nodeType": "Block",
+                                        "src": "667:187:0",
+                                        "statements": [
+                                            {
+                                                "expression": {
+                                                    "argumentTypes": null,
+                                                    "arguments": [
+                                                        {
+                                                            "argumentTypes": null,
+                                                            "arguments": [
+                                                                {
+                                                                    "argumentTypes": null,
+                                                                    "id": 62,
+                                                                    "name": "i",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 46,
+                                                                    "src": "727:1:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "argumentTypes": null,
+                                                                    "baseExpression": {
+                                                                        "argumentTypes": null,
+                                                                        "id": 63,
+                                                                        "name": "propostoNome",
+                                                                        "nodeType": "Identifier",
+                                                                        "overloadedDeclarations": [],
+                                                                        "referencedDeclaration": 30,
+                                                                        "src": "752:12:0",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                                                                            "typeString": "bytes32[] memory"
+                                                                        }
+                                                                    },
+                                                                    "id": 65,
+                                                                    "indexExpression": {
+                                                                        "argumentTypes": null,
+                                                                        "id": 64,
+                                                                        "name": "i",
+                                                                        "nodeType": "Identifier",
+                                                                        "overloadedDeclarations": [],
+                                                                        "referencedDeclaration": 46,
+                                                                        "src": "765:1:0",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_uint256",
+                                                                            "typeString": "uint256"
+                                                                        }
+                                                                    },
+                                                                    "isConstant": false,
+                                                                    "isLValue": true,
+                                                                    "isPure": false,
+                                                                    "lValueRequested": false,
+                                                                    "nodeType": "IndexAccess",
+                                                                    "src": "752:15:0",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_bytes32",
+                                                                        "typeString": "bytes32"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "argumentTypes": null,
+                                                                    "hexValue": "74727565",
+                                                                    "id": 66,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": true,
+                                                                    "kind": "bool",
+                                                                    "lValueRequested": false,
+                                                                    "nodeType": "Literal",
+                                                                    "src": "793:4:0",
+                                                                    "subdenomination": null,
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_bool",
+                                                                        "typeString": "bool"
+                                                                    },
+                                                                    "value": "true"
+                                                                },
+                                                                {
+                                                                    "argumentTypes": null,
+                                                                    "hexValue": "30",
+                                                                    "id": 67,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": true,
+                                                                    "kind": "number",
+                                                                    "lValueRequested": false,
+                                                                    "nodeType": "Literal",
+                                                                    "src": "826:1:0",
+                                                                    "subdenomination": null,
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_rational_0_by_1",
+                                                                        "typeString": "int_const 0"
+                                                                    },
+                                                                    "value": "0"
+                                                                }
+                                                            ],
+                                                            "expression": {
+                                                                "argumentTypes": [
+                                                                    {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    },
+                                                                    {
+                                                                        "typeIdentifier": "t_bytes32",
+                                                                        "typeString": "bytes32"
+                                                                    },
+                                                                    {
+                                                                        "typeIdentifier": "t_bool",
+                                                                        "typeString": "bool"
+                                                                    },
+                                                                    {
+                                                                        "typeIdentifier": "t_rational_0_by_1",
+                                                                        "typeString": "int_const 0"
+                                                                    }
+                                                                ],
+                                                                "id": 61,
+                                                                "name": "Proposto",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 18,
+                                                                "src": "696:8:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_type$_t_struct$_Proposto_$18_storage_ptr_$",
+                                                                    "typeString": "type(struct Escrutinio.Proposto storage pointer)"
+                                                                }
+                                                            },
+                                                            "id": 68,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "kind": "structConstructorCall",
+                                                            "lValueRequested": false,
+                                                            "names": [
+                                                                "id",
+                                                                "nome",
+                                                                "exists",
+                                                                "votoTotal"
+                                                            ],
+                                                            "nodeType": "FunctionCall",
+                                                            "src": "696:146:0",
+                                                            "tryCall": false,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_Proposto_$18_memory_ptr",
+                                                                "typeString": "struct Escrutinio.Proposto memory"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "expression": {
+                                                        "argumentTypes": [
+                                                            {
+                                                                "typeIdentifier": "t_struct$_Proposto_$18_memory_ptr",
+                                                                "typeString": "struct Escrutinio.Proposto memory"
+                                                            }
+                                                        ],
+                                                        "expression": {
+                                                            "argumentTypes": null,
+                                                            "id": 58,
+                                                            "name": "propostos",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 27,
+                                                            "src": "681:9:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                                "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 60,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberName": "push",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": null,
+                                                        "src": "681:14:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Proposto_$18_storage_$returns$__$",
+                                                            "typeString": "function (struct Escrutinio.Proposto storage ref)"
+                                                        }
+                                                    },
+                                                    "id": 69,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "kind": "functionCall",
+                                                    "lValueRequested": false,
+                                                    "names": [],
+                                                    "nodeType": "FunctionCall",
+                                                    "src": "681:162:0",
+                                                    "tryCall": false,
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_tuple$__$",
+                                                        "typeString": "tuple()"
+                                                    }
+                                                },
+                                                "id": 70,
+                                                "nodeType": "ExpressionStatement",
+                                                "src": "681:162:0"
+                                            }
+                                        ]
+                                    },
+                                    "condition": {
+                                        "argumentTypes": null,
+                                        "commonType": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        },
+                                        "id": 54,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "argumentTypes": null,
+                                            "id": 49,
+                                            "name": "i",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 46,
+                                            "src": "633:1:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "<",
+                                        "rightExpression": {
+                                            "argumentTypes": null,
+                                            "commonType": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "id": 53,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "leftExpression": {
+                                                "argumentTypes": null,
+                                                "expression": {
+                                                    "argumentTypes": null,
+                                                    "id": 50,
+                                                    "name": "propostoNome",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 30,
+                                                    "src": "637:12:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                                                        "typeString": "bytes32[] memory"
+                                                    }
+                                                },
+                                                "id": 51,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberName": "length",
+                                                "nodeType": "MemberAccess",
+                                                "referencedDeclaration": null,
+                                                "src": "637:19:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "nodeType": "BinaryOperation",
+                                            "operator": "-",
+                                            "rightExpression": {
+                                                "argumentTypes": null,
+                                                "hexValue": "31",
+                                                "id": 52,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "number",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "659:1:0",
+                                                "subdenomination": null,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_rational_1_by_1",
+                                                    "typeString": "int_const 1"
+                                                },
+                                                "value": "1"
+                                            },
+                                            "src": "637:23:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "633:27:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 72,
+                                    "initializationExpression": {
+                                        "assignments": [
+                                            46
+                                        ],
+                                        "declarations": [
+                                            {
+                                                "constant": false,
+                                                "id": 46,
+                                                "mutability": "mutable",
+                                                "name": "i",
+                                                "nodeType": "VariableDeclaration",
+                                                "overrides": null,
+                                                "scope": 72,
+                                                "src": "621:6:0",
+                                                "stateVariable": false,
+                                                "storageLocation": "default",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "typeName": {
+                                                    "id": 45,
+                                                    "name": "uint",
+                                                    "nodeType": "ElementaryTypeName",
+                                                    "src": "621:4:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "value": null,
+                                                "visibility": "internal"
+                                            }
+                                        ],
+                                        "id": 48,
+                                        "initialValue": {
+                                            "argumentTypes": null,
+                                            "hexValue": "30",
+                                            "id": 47,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "630:1:0",
+                                            "subdenomination": null,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_0_by_1",
+                                                "typeString": "int_const 0"
+                                            },
+                                            "value": "0"
+                                        },
+                                        "nodeType": "VariableDeclarationStatement",
+                                        "src": "621:10:0"
+                                    },
+                                    "loopExpression": {
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 56,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "nodeType": "UnaryOperation",
+                                            "operator": "++",
+                                            "prefix": false,
+                                            "src": "662:3:0",
+                                            "subExpression": {
+                                                "argumentTypes": null,
+                                                "id": 55,
+                                                "name": "i",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 46,
+                                                "src": "662:1:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "id": 57,
+                                        "nodeType": "ExpressionStatement",
+                                        "src": "662:3:0"
+                                    },
+                                    "nodeType": "ForStatement",
+                                    "src": "616:238:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "id": 74,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 31,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 30,
+                                    "mutability": "mutable",
+                                    "name": "propostoNome",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 74,
+                                    "src": "490:29:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                                        "typeString": "bytes32[]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 28,
+                                            "name": "bytes32",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "490:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            }
+                                        },
+                                        "id": 29,
+                                        "length": null,
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "490:9:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                                            "typeString": "bytes32[]"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "489:31:0"
+                        },
+                        "returnParameters": {
+                            "id": 32,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "528:0:0"
+                        },
+                        "scope": 170,
+                        "src": "478:382:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 108,
+                            "nodeType": "Block",
+                            "src": "928:360:0",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        82
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 82,
+                                            "mutability": "mutable",
+                                            "name": "item",
+                                            "nodeType": "VariableDeclaration",
+                                            "overrides": null,
+                                            "scope": 108,
+                                            "src": "938:25:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "storage",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_struct$_Participante_$9_storage_ptr",
+                                                "typeString": "struct Escrutinio.Participante"
+                                            },
+                                            "typeName": {
+                                                "contractScope": null,
+                                                "id": 81,
+                                                "name": "Participante",
+                                                "nodeType": "UserDefinedTypeName",
+                                                "referencedDeclaration": 9,
+                                                "src": "938:12:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Participante_$9_storage_ptr",
+                                                    "typeString": "struct Escrutinio.Participante"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 86,
+                                    "initialValue": {
+                                        "argumentTypes": null,
+                                        "baseExpression": {
+                                            "argumentTypes": null,
+                                            "id": 83,
+                                            "name": "participantes",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 24,
+                                            "src": "966:13:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Participante_$9_storage_$",
+                                                "typeString": "mapping(address => struct Escrutinio.Participante storage ref)"
+                                            }
+                                        },
+                                        "id": 85,
+                                        "indexExpression": {
+                                            "argumentTypes": null,
+                                            "id": 84,
+                                            "name": "chaveUnica",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 76,
+                                            "src": "980:10:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "isConstant": false,
+                                        "isLValue": true,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "nodeType": "IndexAccess",
+                                        "src": "966:25:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_struct$_Participante_$9_storage",
+                                            "typeString": "struct Escrutinio.Participante storage ref"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "938:53:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 91,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "id": 88,
+                                                        "name": "propostos",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 27,
+                                                        "src": "1010:9:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                            "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                        }
+                                                    },
+                                                    "id": 89,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "length",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": null,
+                                                    "src": "1010:16:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "<",
+                                                "rightExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 90,
+                                                    "name": "totalParticipantes",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 20,
+                                                    "src": "1029:18:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "1010:37:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            ],
+                                            "id": 87,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                -18,
+                                                -18
+                                            ],
+                                            "referencedDeclaration": -18,
+                                            "src": "1002:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                                                "typeString": "function (bool) pure"
+                                            }
+                                        },
+                                        "id": 92,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1002:46:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 93,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1002:46:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "id": 99,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "UnaryOperation",
+                                                "operator": "!",
+                                                "prefix": true,
+                                                "src": "1066:28:0",
+                                                "subExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "baseExpression": {
+                                                            "argumentTypes": null,
+                                                            "id": 95,
+                                                            "name": "propostos",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 27,
+                                                            "src": "1067:9:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                                "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 97,
+                                                        "indexExpression": {
+                                                            "argumentTypes": null,
+                                                            "id": 96,
+                                                            "name": "proposto_",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 78,
+                                                            "src": "1077:9:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "1067:20:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_Proposto_$18_storage",
+                                                            "typeString": "struct Escrutinio.Proposto storage ref"
+                                                        }
+                                                    },
+                                                    "id": 98,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "exists",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 17,
+                                                    "src": "1067:27:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            ],
+                                            "id": 94,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                -18,
+                                                -18
+                                            ],
+                                            "referencedDeclaration": -18,
+                                            "src": "1058:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                                                "typeString": "function (bool) pure"
+                                            }
+                                        },
+                                        "id": 100,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1058:37:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 101,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1058:37:0"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "id": 105,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "UnaryOperation",
+                                                "operator": "!",
+                                                "prefix": true,
+                                                "src": "1113:12:0",
+                                                "subExpression": {
+                                                    "argumentTypes": null,
+                                                    "expression": {
+                                                        "argumentTypes": null,
+                                                        "id": 103,
+                                                        "name": "item",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 82,
+                                                        "src": "1114:4:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_Participante_$9_storage_ptr",
+                                                            "typeString": "struct Escrutinio.Participante storage pointer"
+                                                        }
+                                                    },
+                                                    "id": 104,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "votado",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 4,
+                                                    "src": "1114:11:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            ],
+                                            "id": 102,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                -18,
+                                                -18
+                                            ],
+                                            "referencedDeclaration": -18,
+                                            "src": "1105:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                                                "typeString": "function (bool) pure"
+                                            }
+                                        },
+                                        "id": 106,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1105:21:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 107,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1105:21:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "a5ac6b19",
+                        "id": 109,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "voto",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 79,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 76,
+                                    "mutability": "mutable",
+                                    "name": "chaveUnica",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 109,
+                                    "src": "880:18:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 75,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "880:7:0",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 78,
+                                    "mutability": "mutable",
+                                    "name": "proposto_",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 109,
+                                    "src": "900:14:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 77,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "900:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "879:36:0"
+                        },
+                        "returnParameters": {
+                            "id": 80,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "928:0:0"
+                        },
+                        "scope": 170,
+                        "src": "866:422:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 127,
+                            "nodeType": "Block",
+                            "src": "1384:138:0",
+                            "statements": [
+                                {
+                                    "condition": {
+                                        "argumentTypes": null,
+                                        "commonType": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        },
+                                        "id": 117,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 114,
+                                                "name": "propostos",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 27,
+                                                "src": "1395:9:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                    "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                }
+                                            },
+                                            "id": 115,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "length",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": null,
+                                            "src": "1395:16:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "<",
+                                        "rightExpression": {
+                                            "argumentTypes": null,
+                                            "id": 116,
+                                            "name": "totalParticipantes",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 20,
+                                            "src": "1414:18:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "1395:37:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "falseBody": {
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 124,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "leftHandSide": {
+                                                "argumentTypes": null,
+                                                "id": 122,
+                                                "name": "votacaoterminada_",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 112,
+                                                "src": "1490:17:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            "nodeType": "Assignment",
+                                            "operator": "=",
+                                            "rightHandSide": {
+                                                "argumentTypes": null,
+                                                "hexValue": "74727565",
+                                                "id": 123,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "bool",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1510:4:0",
+                                                "subdenomination": null,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                "value": "true"
+                                            },
+                                            "src": "1490:24:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "id": 125,
+                                        "nodeType": "ExpressionStatement",
+                                        "src": "1490:24:0"
+                                    },
+                                    "id": 126,
+                                    "nodeType": "IfStatement",
+                                    "src": "1392:122:0",
+                                    "trueBody": {
+                                        "expression": {
+                                            "argumentTypes": null,
+                                            "id": 120,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "leftHandSide": {
+                                                "argumentTypes": null,
+                                                "id": 118,
+                                                "name": "votacaoterminada_",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 112,
+                                                "src": "1442:17:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            "nodeType": "Assignment",
+                                            "operator": "=",
+                                            "rightHandSide": {
+                                                "argumentTypes": null,
+                                                "hexValue": "66616c7365",
+                                                "id": 119,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "bool",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1462:5:0",
+                                                "subdenomination": null,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                "value": "false"
+                                            },
+                                            "src": "1442:25:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bool",
+                                                "typeString": "bool"
+                                            }
+                                        },
+                                        "id": 121,
+                                        "nodeType": "ExpressionStatement",
+                                        "src": "1442:25:0"
+                                    }
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "9270103f",
+                        "id": 128,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "votacaoTerminada",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 110,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1320:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 113,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 112,
+                                    "mutability": "mutable",
+                                    "name": "votacaoterminada_",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 128,
+                                    "src": "1356:22:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    },
+                                    "typeName": {
+                                        "id": 111,
+                                        "name": "bool",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1356:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1355:24:0"
+                        },
+                        "scope": 170,
+                        "src": "1295:227:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 138,
+                            "nodeType": "Block",
+                            "src": "1613:51:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 136,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 133,
+                                            "name": "totalPropostos_",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 131,
+                                            "src": "1623:15:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "id": 134,
+                                                "name": "propostos",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 27,
+                                                "src": "1641:9:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                    "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                }
+                                            },
+                                            "id": 135,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "length",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": null,
+                                            "src": "1641:16:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "1623:34:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 137,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1623:34:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "d23879e4",
+                        "id": 139,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "totalPropostos",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 129,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1551:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 132,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 131,
+                                    "mutability": "mutable",
+                                    "name": "totalPropostos_",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 139,
+                                    "src": "1587:20:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 130,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1587:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1586:22:0"
+                        },
+                        "scope": 170,
+                        "src": "1528:136:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 153,
+                            "nodeType": "Block",
+                            "src": "1766:51:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 151,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 146,
+                                            "name": "propostosName_",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 144,
+                                            "src": "1776:14:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "baseExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 147,
+                                                    "name": "propostos",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 27,
+                                                    "src": "1793:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                        "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 149,
+                                                "indexExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 148,
+                                                    "name": "i",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 141,
+                                                    "src": "1803:1:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "1793:12:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Proposto_$18_storage",
+                                                    "typeString": "struct Escrutinio.Proposto storage ref"
+                                                }
+                                            },
+                                            "id": 150,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "nome",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 13,
+                                            "src": "1793:17:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            }
+                                        },
+                                        "src": "1776:34:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "id": 152,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1776:34:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "d8fe0d9c",
+                        "id": 154,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "proposalNameByPos",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 142,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 141,
+                                    "mutability": "mutable",
+                                    "name": "i",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 154,
+                                    "src": "1697:6:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 140,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1697:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1696:8:0"
+                        },
+                        "returnParameters": {
+                            "id": 145,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 144,
+                                    "mutability": "mutable",
+                                    "name": "propostosName_",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 154,
+                                    "src": "1738:22:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes32",
+                                        "typeString": "bytes32"
+                                    },
+                                    "typeName": {
+                                        "id": 143,
+                                        "name": "bytes32",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1738:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1737:24:0"
+                        },
+                        "scope": 170,
+                        "src": "1670:147:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 168,
+                            "nodeType": "Block",
+                            "src": "1914:53:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 166,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 161,
+                                            "name": "totalVotos_",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 159,
+                                            "src": "1924:11:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "expression": {
+                                                "argumentTypes": null,
+                                                "baseExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 162,
+                                                    "name": "propostos",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 27,
+                                                    "src": "1938:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_Proposto_$18_storage_$dyn_storage",
+                                                        "typeString": "struct Escrutinio.Proposto storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 164,
+                                                "indexExpression": {
+                                                    "argumentTypes": null,
+                                                    "id": 163,
+                                                    "name": "i",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 156,
+                                                    "src": "1948:1:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "1938:12:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Proposto_$18_storage",
+                                                    "typeString": "struct Escrutinio.Proposto storage ref"
+                                                }
+                                            },
+                                            "id": 165,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "votoTotal",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 15,
+                                            "src": "1938:22:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "1924:36:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 167,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1924:36:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "ba8b1bf3",
+                        "id": 169,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "proposalVotesByPos",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 157,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 156,
+                                    "mutability": "mutable",
+                                    "name": "i",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 169,
+                                    "src": "1851:6:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 155,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1851:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1850:8:0"
+                        },
+                        "returnParameters": {
+                            "id": 160,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 159,
+                                    "mutability": "mutable",
+                                    "name": "totalVotos_",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 169,
+                                    "src": "1892:16:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 158,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1892:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1891:18:0"
+                        },
+                        "scope": 170,
+                        "src": "1823:144:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 171,
+                "src": "103:1867:0"
+            }
+        ],
+        "src": "0:1971:0"
+    },
+    "functionHashes": {
+        "participantes(address)": "2fffcf96",
+        "proposalNameByPos(uint256)": "d8fe0d9c",
+        "proposalVotesByPos(uint256)": "ba8b1bf3",
+        "propostos(uint256)": "766a79c0",
+        "totalParticipantes()": "62dea121",
+        "totalPropostos()": "d23879e4",
+        "votacaoTerminada()": "9270103f",
+        "voto(address,uint256)": "a5ac6b19"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "167200",
+            "executionCost": "infinite",
+            "totalCost": "infinite"
+        },
+        "external": {
+            "participantes(address)": "2047",
+            "proposalNameByPos(uint256)": "2016",
+            "proposalVotesByPos(uint256)": "1972",
+            "propostos(uint256)": "4507",
+            "totalParticipantes()": "1021",
+            "totalPropostos()": "1042",
+            "votacaoTerminada()": "1913",
+            "voto(address,uint256)": "4496"
+        }
+    }
+}
