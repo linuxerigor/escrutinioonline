@@ -1,0 +1,13 @@
+<h1 class="cover-heading">Auditoria de escrutinio</h1>
+
+    <p class="lead mt-5">
+      <small class="text-small">Digite o número do escrutinio</small>
+      <input  type="text" [(ngModel)]="escrutinioid"  class="form-control" placeholder="ID: ......." [disabled]="escrutinioid" (ngModelChange)="escrutinioenter($event)">
+      <!-- <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Iniciar votação</a> -->
+    </p>
+
+    <p class="lead mt-5" *ngIf="escrutinioid">
+      <small class="text-small">Digite a sua identificação na Blockchain</small>
+      <input  type="text" [(ngModel)]="identificacao"  class="form-control" placeholder="0x......." [disabled]="identificacao" (ngModelChange)="auditar($event)">
+      <!-- <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Iniciar votação</a> -->
+    </p>

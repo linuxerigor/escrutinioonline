@@ -17,20 +17,20 @@ contract Escrutinio {
         bool existe;
     }
 
-    uint256 public totalParticipantes;
-    uint256 public totalVotos;
+    uint private limiteParticipantes;
+    uint private totalVotos;
 
-    mapping(address => Participante) public participantes;
+    mapping(address => Participante) private participantes;
 
-    Proposto[] public propostos;
+    Proposto[] private propostos;
 
-    //event SavedVoto(address chaveUnica, uint proposto);
+    event SavedVoto(address chaveUnica, uint proposto);
 
-    constructor(bytes32[] memory propostoNome) public {
-        totalParticipantes = uint256(propostoNome[propostoNome.length - 1]);
+    constructor(bytes32[] memory propostoNome, uint participantes_) public {
+        limiteParticipantes = participantes_;
         totalVotos = 0;
 
-        for (uint i = 0; i < propostoNome.length - 1; i++) {
+        for (uint i = 0; i < propostoNome.length; i++) {
             propostos.push(Proposto({
                 id: i,
                 nome: propostoNome[i],
@@ -42,7 +42,7 @@ contract Escrutinio {
 
     function voto(address chaveUnica, uint proposto) public {
 
-        require(totalVotos < totalParticipantes, "Votacao terminada.");
+        require(totalVotos < limiteParticipantes, "Votacao terminada.");
         require(propostos[proposto].existe,"Candidado nao existe.");
         require(!participantes[chaveUnica].votado,"Voce ja votou.");
 
@@ -52,7 +52,7 @@ contract Escrutinio {
         propostos[proposto].votoTotal += 1;
         totalVotos += 1;
 
-        //emit SavedVoto(chaveUnica, proposto);
+        emit SavedVoto(chaveUnica, proposto);
 
     }
 
@@ -60,17 +60,29 @@ contract Escrutinio {
     function votacaoTerminada() public view
             returns (bool votacaoterminada_)
     {
-      if(propostos.length < totalParticipantes)
+      if(totalVotos < limiteParticipantes)
         votacaoterminada_ = false;
         else
         votacaoterminada_ = true;
 
     }
 
+    function getTotalVotos() public view
+            returns (uint totalVotos_)
+    {
+        totalVotos_ = totalVotos;
+    }
+
     function totalPropostos() public view
             returns (uint totalPropostos_)
     {
         totalPropostos_ = propostos.length;
+    }
+
+     function getLimiteParticipantes() public view
+            returns (uint participantes_)
+    {
+        participantes_ = limiteParticipantes;
     }
 
     function proposalNameByPos(uint i) public view
@@ -83,6 +95,12 @@ contract Escrutinio {
             returns (uint totalVotos_)
     {
         totalVotos_ = propostos[i].votoTotal;
+    }
+
+    function audityVoto(address chaveUnica) public view
+            returns (uint Voto_)
+    {
+        Voto_ = participantes[chaveUnica].voto;
     }
 
 }

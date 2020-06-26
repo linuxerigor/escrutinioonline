@@ -38,7 +38,7 @@
           </div>
 
 
-          <p class="lead" *ngIf="dynamicForm.valid">
+          <p class="lead" *ngIf="dynamicForm.valid && t.controls.length > 0">
             <label *ngIf="submitted" >Este processo pode demorar</label><br>
             <button type="submit"  class="btn btn-lg btn-secondary" [disabled]="submitted">
               <span *ngIf="submitted" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

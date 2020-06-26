@@ -10,13 +10,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EscrutinioComponent } from './escrutinio/escrutinio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuditoriaComponent } from './auditoria/auditoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     CriarEscrutinioComponent,
-    EscrutinioComponent
+    EscrutinioComponent,
+    AuditoriaComponent
   ],
   imports: [
     BrowserModule,
