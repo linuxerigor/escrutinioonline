@@ -11,6 +11,7 @@ import { EscrutinioComponent } from './escrutinio/escrutinio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuditoriaComponent } from './auditoria/auditoria.component';
+import { BtnGotoEtherscanComponent } from './btn-goto-etherscan/btn-goto-etherscan.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuditoriaComponent } from './auditoria/auditoria.component';
     PrincipalComponent,
     CriarEscrutinioComponent,
     EscrutinioComponent,
-    AuditoriaComponent
+    AuditoriaComponent,
+    BtnGotoEtherscanComponent
   ],
   imports: [
     BrowserModule,

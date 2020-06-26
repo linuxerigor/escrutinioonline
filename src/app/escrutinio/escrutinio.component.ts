@@ -35,6 +35,12 @@ export class EscrutinioComponent implements OnInit {
       this.escrutinioid = null;
     }
 
+
+    const ret = localStorage.getItem('minhachave');
+    if (ret) {
+      this.minhachave = ret;
+    }
+
     this.blockchainservice.votacaoTerminada(this.escrutinioid).then(
       (ret) => {
         if (ret){
@@ -78,7 +84,11 @@ export class EscrutinioComponent implements OnInit {
 
   criarid(){
       this.blockchainservice.createaddress().then(
-      (ret) => { this.minhachave = ret; },
+      (ret) => {
+        this.minhachave = ret;
+        localStorage.setItem('minhachave', this.minhachave);
+
+      },
       (e) => { console.log('error', e); this.error = true;}
     );
   }

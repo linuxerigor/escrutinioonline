@@ -1,13 +1,61 @@
 <h1 class="cover-heading">Auditoria de escrutinio</h1>
 
+  <div>
     <p class="lead mt-5">
-      <small class="text-small">Digite o número do escrutinio</small>
+      <small class="text-small">Digite o número do escrutinio
+        <app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan>
+      </small>
       <input  type="text" [(ngModel)]="escrutinioid"  class="form-control" placeholder="ID: ......." [disabled]="escrutinioid" (ngModelChange)="escrutinioenter($event)">
       <!-- <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Iniciar votação</a> -->
     </p>
 
-    <p class="lead mt-5" *ngIf="escrutinioid">
+    <div *ngIf="isloading" class="alert alert-light" role="alert">
+      Este processo pode demorar. Aguarde...
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <ul class="list-group bg-dark" *ngIf="resultado">
+      <li *ngFor="let item of resultado"  class="list-group-item bg-dark d-flex justify-content-between align-items-center">
+        <span>{{item.nome}}</span>
+        <span class="badge badge-info badge-pill pl-3 pr-3 pt-2 pb-2">{{item.votos}}</span>
+      </li>
+    </ul>
+
+
+
+    <p class="lead mt-5" *ngIf="escrutinioid && returnValues.length == 0">
       <small class="text-small">Digite a sua identificação na Blockchain</small>
       <input  type="text" [(ngModel)]="identificacao"  class="form-control" placeholder="0x......." [disabled]="identificacao" (ngModelChange)="auditar($event)">
       <!-- <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Iniciar votação</a> -->
     </p>
+
+  </div>
+
+
+
+    <div class="lead mt-5" *ngIf="returnValues.length > 0">
+
+      <div class="card">
+        <div class="card-header text-dark">
+          <h5 class="m-0">Auditoria dos votos</h5>
+        </div>
+        <div class="card-body">
+
+            <div [class]="item.returnValues.chaveUnica == identificacao ?'card border-primary  p-1 m-1':'card p-1 m-1'" *ngFor="let item of returnValues">
+              <h4 class="card-header text-dark text-left">Block: <app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/block/' + item.blockNumber">{{item.blockNumber}}</app-btn-goto-etherscan> <span *ngIf="item.returnValues.chaveUnica == identificacao" class="badge badge-primary float-right">Você</span></h4>
+              <div class="card-body p-0 pl-1 text-dark">
+                <h6 class="text-dark text-left text-truncate m-0">Transaction: {{item.transactionHash}}<app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/tx/' + item.transactionHash + '#eventlog'"></app-btn-goto-etherscan></h6>
+                <h5 class="text-dark text-left m-0">Votante: <span [class]="item.returnValues.chaveUnica == identificacao? 'badge badge-primary p-1 text-truncate' :'text-truncate'">{{item.returnValues.chaveUnica}}</span>  </h5>
+                <h5 class="text-dark text-left m-0">Candidato: {{hexToAscii(item.returnValues.nome)}}</h5>
+              </div>
+            </div>
+
+        </div>
+        <div class="card-footer text-muted">
+          <h6 class="text-truncate text-muted">Minha chave: {{ identificacao }} <app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + identificacao"></app-btn-goto-etherscan></h6>
+        </div>
+      </div>
+
+    </div>

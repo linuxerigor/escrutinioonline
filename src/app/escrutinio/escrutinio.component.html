@@ -1,6 +1,7 @@
     <div *ngIf="!chavesalva">
       <h2 class="mb-0">Escrutinio ID:</h2>
-      <h4 class="lead overflow-hidden text-muted mt-0">{{escrutinioid}}</h4>
+      <h4 class="lead text-truncate text-muted mt-0">{{escrutinioid}}<app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan></h4>
+
     </div>
 
     <!-- ############# primeira etapa ################### -->
@@ -13,14 +14,14 @@
     </div>
 
      <!-- ############# segunda etapa ################### -->
-     <div *ngIf="minhachave && !chavesalva">
+     <div *ngIf="minhachave && !chavesalva && !votacaoTerminada">
       <h1 class="mt-5">Segunda etapa</h1>
       <p class="h6"><small>Guardar sua chave em segurança e sigilo. Somente com ela é possível auditar o seu voto.</small></p>
       <p class="h6 mt-3"><small>Minha chave de identificação</small></p>
       <!-- <span class="badge badge-info badge-pill p-2" (click)="sharebyclipboard(minhachave)"><span class="overflow-hidden">{{ minhachave }}</span></span> -->
       <input type="text" class="form-control" (click)="sharebyclipboard($event)" value="{{ minhachave }}">
       <!-- <p class="h6"><small>{{ minhachave }}</small></p> -->
-      <div class="mt-5">
+      <div  class="mt-5">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" [(ngModel)]="confirm" id="defaultCheck1">
           <small class="form-check-label" for="defaultCheck1">
@@ -41,7 +42,7 @@
         <div class="card-header text-dark">
           <h2 class="m-0">Cédula de votação</h2>
           <h5 class="m-0">Escrutinio ID:</h5>
-          <small class="overflow-hidden text-muted m-0">{{escrutinioid}}</small>
+          <h5 class="m-0">{{escrutinioid}} <app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan></h5>
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush" *ngIf="propostos">
@@ -59,9 +60,9 @@
           </div>
 
           <div *ngIf="vototerminado" class="alert alert-success" role="alert">
-            Voto concluído com sucesso<br>
-            <small class="text-muted overflow-hidden">BlockHash: {{ vototerminadoret?.blockHash }}</small><br>
-            <small class="text-muted overflow-hidden">TransactionHash: {{ vototerminadoret?.transactionHash }}</small>
+            Voto concluído com sucesso <app-btn-goto-etherscan *ngIf="vototerminadoret.transactionHash" [url]="'https://rinkeby.etherscan.io/tx/'+vototerminadoret.transactionHash+'#eventlog'"></app-btn-goto-etherscan>
+            <h6 class="">BlockHash: {{ vototerminadoret?.blockHash }}</h6>
+            <h6 class="">TransactionHash: {{ vototerminadoret?.transactionHash }}</h6>
           </div>
 
           <div *ngIf="error" class="alert alert-danger" role="alert">
@@ -76,13 +77,14 @@
           </div>
         </div>
         <div class="card-footer text-muted">
-          Minha chave: {{ minhachave }}
+          Minha chave: {{ minhachave }}<app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + minhachave"></app-btn-goto-etherscan>
         </div>
       </div>
 
     </div>
 
     <div *ngIf="votacaoTerminada" class="alert alert-warning" role="alert">
-      Escrutinio finalizado
+      Escrutinio finalizado.
+      <a *ngIf="escrutinioid" class="text-dark btn btn-link" [routerLink]="['/auditoria',escrutinioid]"><a>Resultado</a></a>
     </div>
 

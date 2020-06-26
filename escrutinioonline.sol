@@ -24,7 +24,7 @@ contract Escrutinio {
 
     Proposto[] private propostos;
 
-    event SavedVoto(address chaveUnica, uint proposto);
+    event SavedVoto(address chaveUnica, uint proposto, bytes32 nome);
 
     constructor(bytes32[] memory propostoNome, uint participantes_) public {
         limiteParticipantes = participantes_;
@@ -52,7 +52,7 @@ contract Escrutinio {
         propostos[proposto].votoTotal += 1;
         totalVotos += 1;
 
-        emit SavedVoto(chaveUnica, proposto);
+        emit SavedVoto(chaveUnica, proposto, propostos[proposto].nome);
 
     }
 
