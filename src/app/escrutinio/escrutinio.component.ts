@@ -82,6 +82,19 @@ export class EscrutinioComponent implements OnInit {
 
   }
 
+  carregarid() {
+
+    const promptValue = prompt('Entre com sua chave de identificação', '');
+    if (promptValue != null) {
+      console.log(promptValue);
+      if (promptValue.search(/^0x[\S]{40}/) !== -1 ) {
+        this.minhachave = promptValue;
+        localStorage.setItem('minhachave', promptValue);
+      }
+    }
+
+  }
+
   criarid(){
       this.blockchainservice.createaddress().then(
       (ret) => {
@@ -97,7 +110,7 @@ export class EscrutinioComponent implements OnInit {
 
     if(this.vototerminado) return false;
 
-    if ( confirm('Você confirma o seu foto para: ' + item.nome)) {
+    if ( confirm('Você confirma o seu voto para: ' + item.nome)) {
       this.submitted = true;
       this.blockchainservice.votar(this.escrutinioid, this.minhachave, item.id).then(
         (ret) => {

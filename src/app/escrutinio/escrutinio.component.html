@@ -1,32 +1,34 @@
     <div *ngIf="!chavesalva">
-      <h2 class="mb-0">Escrutinio ID:</h2>
-      <h4 class="lead text-truncate text-muted mt-0">{{escrutinioid}}<app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan></h4>
+      <h2 class="mb-0">Escrutínio ID</h2>
+      <h5 class="text-truncate mt-0">{{escrutinioid}}<app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan></h5>
 
     </div>
 
     <!-- ############# primeira etapa ################### -->
     <div *ngIf="!minhachave && !votacaoTerminada">
       <h1 class="cover-heading mt-5">Primeira etapa</h1>
-      <p class="h6"><small>Para votar, você precisa criar uma identificação na Blockchain</small></p>
+      <p class="h6"><small>Você precisa gerar uma chave de identificação na Blockchain</small></p>
       <p class="lead">
         <button (click)="criarid()" class="btn btn-lg btn-secondary">Gerar minha identificação</button>
       </p>
+      <button (click)="carregarid()" class="btn btn-sm btn-dark">Já tenho uma chave de identificação</button>
+
     </div>
 
      <!-- ############# segunda etapa ################### -->
      <div *ngIf="minhachave && !chavesalva && !votacaoTerminada">
       <h1 class="mt-5">Segunda etapa</h1>
-      <p class="h6"><small>Guardar sua chave em segurança e sigilo. Somente com ela é possível auditar o seu voto.</small></p>
-      <p class="h6 mt-3"><small>Minha chave de identificação</small></p>
+      <p class="h6"><small>Guarde sua chave em segurança e sigilo. <br>Somente com ela será possível auditar o seu voto.</small></p>
+      <p class="h6 mt-3 mb-0"><small>Minha chave de identificação</small></p>
       <!-- <span class="badge badge-info badge-pill p-2" (click)="sharebyclipboard(minhachave)"><span class="overflow-hidden">{{ minhachave }}</span></span> -->
-      <input type="text" class="form-control" (click)="sharebyclipboard($event)" value="{{ minhachave }}">
+      <input type="text" class="form-control mt-0" (click)="sharebyclipboard($event)" value="{{ minhachave }}">
       <!-- <p class="h6"><small>{{ minhachave }}</small></p> -->
       <div  class="mt-5">
-        <div class="form-check">
+        <div class="form-check mb-2">
           <input class="form-check-input" type="checkbox" [(ngModel)]="confirm" id="defaultCheck1">
-          <small class="form-check-label" for="defaultCheck1">
-            Confirmo que copiei a chave e guardei em lugar seguro
-          </small>
+          <label class="form-check-label" for="defaultCheck1">
+            <small>Confirmo que copiei e guardei a chave em lugar seguro</small>
+          </label>
         </div>
         <button (click)="setchavesalva()" class="btn btn-lg btn-secondary" [disabled]="!confirm">Prosseguir com a votação</button>
       </div>
@@ -35,19 +37,19 @@
 
     <!-- ############# terceira etapa ################### -->
     <div *ngIf="minhachave && chavesalva">
-      <h1 class="cover-heading mt-0">Terceira etapa</h1>
+      <h1 class="cover-heading mt-0">Início da votação</h1>
       <p class="h6"><small>Vote no seu candidato</small></p>
 
       <div class="card">
         <div class="card-header text-dark">
           <h2 class="m-0">Cédula de votação</h2>
-          <h5 class="m-0">Escrutinio ID:</h5>
+          <h5 class="m-0">Escrutínio ID</h5>
           <h5 class="m-0">{{escrutinioid}} <app-btn-goto-etherscan *ngIf="escrutinioid" [url]="'https://rinkeby.etherscan.io/address/' + escrutinioid + '#events'"></app-btn-goto-etherscan></h5>
         </div>
         <div class="card-body">
           <ul class="list-group list-group-flush" *ngIf="propostos">
             <li *ngFor="let item of propostos"  class="list-group-item text-dark text-left">
-              <b>#{{item.id}}</b>  {{item.nome}}
+              {{item.nome}}
               <button type="button" (click)="confirmvoto(item)" [disabled]="submitted" class="btn btn-outline-primary float-right">&nbsp;</button>
             </li>
           </ul>
@@ -84,7 +86,7 @@
     </div>
 
     <div *ngIf="votacaoTerminada" class="alert alert-warning" role="alert">
-      Escrutinio finalizado.
+      Escrutínio finalizado.
       <a *ngIf="escrutinioid" class="text-dark btn btn-link" [routerLink]="['/auditoria',escrutinioid]"><a>Resultado</a></a>
     </div>
 

@@ -1,6 +1,6 @@
 <h1 class="cover-heading">Escrutinio Online</h1>
     <p class="lead">Votação online, secreta e auditável</p>
-    <p class="lead">
+    <!-- <p class="lead">
         Utilizando BlockChain da Ethereum
         <svg width="20px" height="20px" viewBox="0 0 256 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
           <g>
@@ -12,14 +12,14 @@
               <polygon fill="#393939" points="0.0009 212.3208 127.9609 287.9578 127.9609 154.1588"/>
           </g>
         </svg>
-    </p>
+    </p> -->
 
     <p class="lead">
       <a href="#" [routerLink]="['/criar']" class="btn btn-lg btn-secondary">Criar um escrutinio</a>
     </p>
 
 
-    <h1 class="cover-heading mt-5">Ou</h1>
+    <h1 class="cover-heading mt-5">ou</h1>
     <p class="lead mt-5">
       <small class="text-small">Digite o número do escrutinio</small>
       <input type="text" [(ngModel)]="escrutinioid"  class="form-control" placeholder="ID: ......." (ngModelChange)="escrutinioenter($event)">

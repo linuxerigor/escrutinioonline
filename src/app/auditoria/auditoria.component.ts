@@ -14,6 +14,7 @@ export class AuditoriaComponent implements OnInit {
   identificacao = null;
   resultado = null;
   isloading = false;
+  votacaoTerminada = false;
 
   public returnValues = [];
 
@@ -39,8 +40,22 @@ export class AuditoriaComponent implements OnInit {
           console.log('fechVotos ', v);
           this.resultado = v;
           this.isloading = false;
+
+          const ret = localStorage.getItem('minhachave');
+          if (ret) {
+            this.identificacao = ret;
+          }
         }
       );
+
+      this.blockchainservice.votacaoTerminada(this.escrutinioid).then(
+        (ret) => {
+          if (ret){
+            console.log('votacaoTerminada: ', ret);
+            this.votacaoTerminada = true;
+          }
+        });
+
     }
 
 

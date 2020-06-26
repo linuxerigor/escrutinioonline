@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "publish" : "git push origin `git subtree split --prefix dist/escrutinioonline master`:gh-pages --force",
     "test": "ng test",
     "solc-v": "solcjs -V",
     "solc-abi": "solcjs --abi --base-path . ./escrutinioonline.sol",

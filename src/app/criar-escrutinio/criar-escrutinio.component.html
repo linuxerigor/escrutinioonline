@@ -1,6 +1,6 @@
 
-<h1  *ngIf="!smartcontract" class="cover-heading">Registrar no Bockchain</h1>
-<p *ngIf="!smartcontract" class="lead">Inicie um escrutinio registrando no BlockChain da Ethereum</p>
+<h1  *ngIf="!smartcontract">Criando um novo escrutínio</h1>
+<h5 *ngIf="!smartcontract" class="">Seu escrutínio será registrado na BlockChain da Ethereum</h5>
 
 
 <form *ngIf="!smartcontract" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
@@ -30,7 +30,7 @@
               <div class="">
                   <div [formGroup]="ticket" class="form-row align-items-center">
                       <div class="form-group col-12">
-                          <label class="lead">Candidato {{(i+1)}}</label>
+                          <label class="lead">Opção {{(i+1)}}</label>
                           <input type="text" formControlName="name" class="form-control" maxlength="30" />
                       </div>
                   </div>
@@ -38,11 +38,11 @@
           </div>
 
 
-          <p class="lead" *ngIf="dynamicForm.valid && t.controls.length > 0">
+          <p class="lead" >
             <label *ngIf="submitted" >Este processo pode demorar</label><br>
-            <button type="submit"  class="btn btn-lg btn-secondary" [disabled]="submitted">
+            <button type="submit"  class="btn btn-lg btn-secondary" [disabled]="submitted || !dynamicForm.valid || t.controls.length == 0">
               <span *ngIf="submitted" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-              {{submitted ? 'Aguarde...':'Criar escrutinio'}}
+              {{submitted ? 'Aguarde...':'Criar escrutínio'}}
             </button>
           </p>
 </form>
