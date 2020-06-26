@@ -26,7 +26,6 @@
 
     <div *ngIf="votacaoTerminada" class="alert alert-success mt-1" role="alert">
       Escrutínio finalizado.
-      <a *ngIf="escrutinioid" class="text-dark btn btn-link" [routerLink]="['/auditoria',escrutinioid]"><a>Resultado</a></a>
     </div>
     <div *ngIf="escrutinioid && !votacaoTerminada" class="alert alert-warning mt-1" role="alert">
       Escrutínio em andamento
